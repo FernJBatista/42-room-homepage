@@ -1,0 +1,49 @@
+// Breakpoints
+$big-screen-breakpoint: 88rem;
+$desktop-breakpoint: 64rem;
+$tablet-breakpoint: 40rem;
+$mobile-breakpoint: 30rem;
+
+// Media Query Mixins
+@mixin big-screen-up {
+    @media (min-width: #{$big-screen-breakpoint}) {
+    @content;
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: #{$tablet-breakpoint}) {
+    @content;
+    }
+}
+
+@mixin mobile-up {
+    @media (min-width: #{$mobile-breakpoint}) {
+    @content;
+    }
+}
+
+// Max-width versions (optional)
+@mixin desktop-down {
+    @media (max-width: #{$desktop-breakpoint}) {
+    @content;
+    }
+}
+
+@mixin tablet-down {
+    @media (max-width: #{$tablet-breakpoint}) {
+    @content;
+    }
+}
+
+@mixin mobile-down {
+    @media (max-width: #{$mobile-breakpoint}) {
+    @content;
+    }
+}
