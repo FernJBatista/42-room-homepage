@@ -24,3 +24,51 @@ closeMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     menuHeader.classList.toggle('active');
 });
+
+// Slider functionality
+const imageSlides = document.querySelectorAll('.slide-image');
+const contentSlides = document.querySelectorAll('.slide');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+// To reference DOM elements and track slider state
+let currentSlide = 0;
+let cycling = true
+
+// Update current slide
+function updateCurrent(index) {
+    imageSlides.forEach(img => img.classList.remove('active'));
+    contentSlides.forEach(slide => slide.classList.remove('active'));
+
+    imageSlides[index].classList.add('active');
+    contentSlides[index].classList.add('active');
+}
+
+// Next slide
+function nextSlide() {
+    currentSlide++
+
+    if (currentSlide === slides.length) {
+        currentSlide = 0; //Reset to start
+    }
+    updateCurrent(currentSlide);
+}
+
+// Next Button Event
+nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % imageSlides.length;
+    updateCurrent(currentSlide);
+});
+
+// Previous slide
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + imageSlides.length) % imageSlides.length;
+    updateCurrent(currentSlide);
+}
+
+// Previous Button Event
+prevButton.addEventListener('click', () => {
+    prevSlide()
+})
+
+updateCurrent(0)

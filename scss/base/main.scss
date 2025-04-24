@@ -134,8 +134,9 @@ body {
             grid-template-rows: 65vh 35vh;
         }
 
-    .slider-container {
+    .image-slider {
         grid-area: hero;
+        position: relative;
         width: 100%;
         height: 100%;
 
@@ -149,11 +150,20 @@ body {
             grid-column: 1/8;
         }
 
-        .img-hero-1 {
+        .slide-image {
+            position: absolute;
+            top: 0;
             object-fit: cover;
             object-position: center;
             height: 100%;
             width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+
+            &.active {
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+            }
         }
     }
 
@@ -169,6 +179,7 @@ body {
             grid-column: 6/7;
             place-self: end;
             justify-self: start;
+            width: 100%;
         }
 
         @include mixins.big-screen-up {
@@ -177,22 +188,29 @@ body {
         }
 
         .slider-button {
+            z-index: 4;
             padding: 0.5rem;
             border: 0;
             color: var(--Dark-Gray);
             background-color: var(--Black);
+            cursor: pointer;
+
+            @include mixins.desktop-up {
+                width: 100%;
+            }
         }
     }
 }
 
 .discover-section {
+    position: relative;
     grid-area: discover;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 3rem 2rem;
     width: 100%;
+    min-height: 35vh;
     
     @include mixins.desktop-up {
         grid-row: 1/2;
@@ -206,13 +224,26 @@ body {
     }
 
     .slide {
+        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         gap: 1rem;
+        padding: 0 2rem;
         max-width: 24rem;
         width: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+
+        &.active {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+
+        @include mixins.mobile-up {
+            max-width: 40rem;
+        }
 
         @include mixins.desktop-up {
             max-width: 32rem;
@@ -231,6 +262,12 @@ body {
             letter-spacing: 0.785rem;
             border: none;
             background-color: transparent;
+            cursor: pointer;
+            transition: letter-spacing 0.8s ease;
+
+            &:hover {
+                letter-spacing: 1.25rem;
+            }
         }
     }
 }
@@ -258,20 +295,56 @@ body {
     }
 }
 
-.about-content {
-    grid-area: about;
+.about-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
     padding: 3rem 2rem;
     width: 100%;
 
+    @include mixins.mobile-up {
+        padding: 5rem 2rem;
+    }
+    
+    @include mixins.tablet-up {
+        padding: 5rem 2rem;
+    }
+
     @include mixins.desktop-up {
         grid-row: 2/3;
+        grid-column: 3/7;
+    }
+
+    @include mixins.big-screen-up {
+        grid-row: 2/3;
         grid-column: 4/9;
-        padding: 5rem;
+    }
+
+    .about-content {
+        grid-area: about;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    
+        @include mixins.mobile-up {
+            padding: 5rem 0;
+        }
+
+        @include mixins.tablet-up {
+            max-width: 40rem;
+        }
+    
+        @include mixins.desktop-up {
+            grid-column: 3/7;
+        }
+    
+        @include mixins.big-screen-up {
+            grid-column: 4/9;
+        }
     }
 }
 

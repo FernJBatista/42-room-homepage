@@ -46,18 +46,28 @@
   </header>
 
   <main class="main-content">
-    <div class="slider-container">
+    <div class="image-slider">
       <picture>
         <source media="(max-width: 480px)" srcset="./images/mobile-image-hero-1.jpg">
         <source media="(min-width: 481px)" srcset="./images/desktop-image-hero-1.jpg">
-        <img class="img-hero-1" src="./images/desktop-image-hero-1.jpg" alt="">
+        <img class="slide-image img-hero-1" src="./images/desktop-image-hero-1.jpg" alt="">
+      </picture>
+      <picture>
+        <source media="(max-width: 480px)" srcset="./images/mobile-image-hero-2.jpg">
+        <source media="(min-width: 481px)" srcset="./images/desktop-image-hero-2.jpg">
+        <img class="slide-image img-hero-2" src="./images/desktop-image-hero-2.jpg" alt="">
+      </picture>
+      <picture>
+        <source media="(max-width: 480px)" srcset="./images/mobile-image-hero-3.jpg">
+        <source media="(min-width: 481px)" srcset="./images/desktop-image-hero-3.jpg">
+        <img class="slide-image img-hero-3" src="./images/desktop-image-hero-3.jpg" alt="">
       </picture>
     </div>
     <div class="slider-button-container">
-      <button class="slider-button left-slide">
+      <button class="slider-button prev">
         <box-icon name='chevron-left' size="32px" color='#A1A1A1'></box-icon>
       </button>
-      <button class="slider-button right-slide">
+      <button class="slider-button next">
         <box-icon name='chevron-right' size="32px" color='#A1A1A1'></box-icon>
       </button>
     </div>
@@ -65,9 +75,29 @@
     <div class="discover-section">
       <div class="slide discovery">
         <h1>Discover innovative ways to decorate</h1>
-        <p>We provide unmatched quality, comfort, and style for property owners across the country. 
-        Our experts combine form and function in bringing your vision to life. Create a room in your 
-        own style with our collection and make your property a reflection of you and what you love.</p>
+        <p>
+          We provide unmatched quality, comfort, and style for property owners across the country. 
+          Our experts combine form and function in bringing your vision to life. Create a room in your 
+          own style with our collection and make your property a reflection of you and what you love.
+        </p>
+        <button class="shop-now-button">Shop now <box-icon name='right-arrow-alt'></box-icon></button>
+      </div>
+      <div class="slide available">
+        <h1>We are available all across the globe</h1>
+        <p>
+          With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+          Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+          store locator. Any questions? Don't hesitate to contact us today.
+        </p>
+        <button class="shop-now-button">Shop now <box-icon name='right-arrow-alt'></box-icon></button>
+      </div>
+      <div class="slide materials">
+        <h1>Manufactured with the best materials</h1>
+        <p>
+          Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+          to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+          experience in this industry, we understand what customers want for their home and office.
+        </p>
         <button class="shop-now-button">Shop now <box-icon name='right-arrow-alt'></box-icon></button>
       </div>
     </div>
@@ -76,42 +106,21 @@
       <img class="image-about-dark" src="./images/image-about-dark.jpg" alt="">
     </div>
 
-    <div class="about-content">
-      <h2 class="about-title">About our furniture</h2>
-      <p class="about-p">Our multifunctional collection blends design and function to suit your individual taste.
-      Make each room unique, or pick a cohesive theme that best express your interests and what
-      inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-      or anything in between. Product specialists are available to help you create your dream space.</p>
+    <div class="about-section">
+      <div class="about-content">
+        <h2 class="about-title">About our furniture</h2>
+        <p class="about-p">
+          Our multifunctional collection blends design and function to suit your individual taste.
+          Make each room unique, or pick a cohesive theme that best express your interests and what
+          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+          or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+      </div>
     </div>
 
     <div class="footer-image">
       <img class="image-footer" src="./images/image-about-light.jpg" alt="">
     </div>
   </main>
-
-  <!--
-  We are available all across the globe
-
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
-
-  Shop now
-
-  Manufactured with the best materials
-
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
-
-  About our furniture
-
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
-  -->
 </body>
 </html>
